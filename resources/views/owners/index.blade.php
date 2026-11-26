@@ -33,12 +33,12 @@
                             <td>{{ $owner->address ?? '-' }}</td>
                             <td>
                                 <a href="{{ route('owners.edit', $owner) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form ection="{{ route('owners.destroy', $owner) }}" method='POST' class="d-inline"
-                                    onsubmit="return confirm('Hapus pemilik ini? Hewan miliknya juga ikut terhapus')">
-                                    @csrf 
+                                <form action="{{ route('owners.destroy', $owner->id) }}" method="POST" class="d-inline"
+                                    onsubmit="return confirm('Hapus pemilik ini? Hewan miliknya juga ikut terhapus.')">
+                                    @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm btn-danger">Hapus</button>
-                                </form>         
+                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                </form>   
                             </td>
                         </tr>
                     @empty

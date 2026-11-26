@@ -32,8 +32,11 @@
                     <ul class="navbar-nav me-auto">
                         @auth
                             <li class="nav-item"><a class="nav-link" href="{{ route('owners.index') }}">Pemilik</a></li>
+
                             <li class="nav-item"><a class="nav-link" href="{{ route('services.index') }}">Layanan</a></li>
-                            @endauth
+                        
+                            <li class="nav-item"><a class="nav-link" href="{{ route('pets.index') }}">Hewan</a></li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
