@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Owner extends Model
 {
     protected $fillable = ['name', 'phone', 'email', 'address'];
+
+    public function pets(){
+        return $this->hasMany(Pet::class);
+    }
 }
+

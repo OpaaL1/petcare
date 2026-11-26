@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\PetController;
+
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -13,4 +15,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->group(function (){
     Route::resource('owners', OwnerController::class)->except('show');
+    Route::resource('pets', PetController::class)->except('show');
 });
